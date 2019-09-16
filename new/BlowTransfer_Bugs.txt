@@ -1,0 +1,64 @@
+Bugs Found in BlowTrannsfer
+
+HALF FIXED 1.type: http://localhost/BlowTransfer/sharedFiles.php 
+		- This url directly open sharedFiles page  
+		- It display all the decrypted file uploaded by all user 
+		- Solution: Should not be directly accessible
+		- Status :  fixed
+
+HALF FIXED 2. type: http://localhost/BlowTransfer/uploadFile.php 
+		- This url directly open sharedFiles page 
+		- Any user without login or register can shared anomyously 
+		- Solution : Should redirect to login page if use doesn't login
+		- Status   : fixed
+		
+FIXED 3. When user upload file it is store in decrypted format in BlowTransfer\uploads folder
+		-this make no sense to file security 
+		-Solution:All file uploaded by user should store in different folder 
+		-Status : Fixed by Us
+
+FIXED 4.Type : http://localhost/BlowTransfer/  display desing templete used in project
+		-bcz of this we have manually type localhost/BlowTransfer/login.php which expose all security issue
+		-Solution: should display login page by typing http://localhost/BlowTransfer/ 
+		-Status: Fixed by us
+		
+FIXED 5.File name issue	
+            -only file with no space can be encrypted and dedcrypted 
+			eg: shifakarol.txt
+	    -file name with space are not encrypted or decrypted
+			eg:shifa karol.txt gives error
+	    -Solution:space in file sholud be removed before storing file into server
+	    -Status:fixed by us
+
+OK 6.type: http://localhost/BlowTransfer/uploads/
+		-It display list of directoryfile present in uploads folder
+		-this give access to hacker/anomyous users to hack all the file uploaded by all user 
+		-Solution:Security permissiom sholud be setup on upload/directory
+		-Status : Not fixed 
+
+FIXED 7.OTP issue
+		-OTP is not  send to all user
+		-There is no way to login withot otp
+		-Solution : Provide alternative way to login like security question like what is middle name  of ur mother ,etc
+		-Status   : Not fixed
+		
+8.Forgot Password:
+		-It display only enter password
+		-There is no way to change password
+		-What  if someone one get user password??
+		-Solution : There should be a way to change password
+		-Status   : Not fixed
+		
+FIXED 9.Delete option remove file without conformation:
+		-By mistake delete button can be preesed
+		-It remove files 
+		-Solution : Promt user to ask whether user want to delete file or not
+		-fixed by us
+
+REMOVED 11.Remeber Me    :
+		-Remeber me option is not working
+		-fixed by us
+
+12.OTP to Dashboard :
+		- 
+		
